@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "3f68f5bb-c9d3-4493-9b90-f291f42f9c5e",
+    "name": "Books Reviews API - Local",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"isbn\": \"{{isbn}}\",\n  \"title\": \"{{title}}\",\n  \"author\": \"{{author}}\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "books"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Review",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"reader\": \"{{reader}}\",\n  \"score\": {{score}},\n  \"comment\": \"{{comment}}\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/{{isbn}}/reviews",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "books",
+            "{{isbn}}",
+            "reviews"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Reviews",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/{{isbn}}/reviews",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "books",
+            "{{isbn}}",
+            "reviews"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "isbn",
+      "value": "978-0-13-468599-1"
+    },
+    {
+      "key": "title",
+      "value": "Clean Architecture"
+    },
+    {
+      "key": "author",
+      "value": "Robert C. Martin"
+    },
+    {
+      "key": "reader",
+      "value": "Juan Perez"
+    },
+    {
+      "key": "score",
+      "value": "9"
+    },
+    {
+      "key": "comment",
+      "value": "Excelente libro de arquitectura de software."
+    }
+  ]
+}

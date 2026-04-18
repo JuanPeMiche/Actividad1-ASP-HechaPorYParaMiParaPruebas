@@ -1,0 +1,16 @@
+{
+  "name": "books-reviews-api",
+  "version": "1.0.0",
+  "description": "API para gestion de libros y resenas con DynamoDB",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.844.0",
+    "@aws-sdk/lib-dynamodb": "^3.844.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "uuid": "^9.0.1"
+  }
+}
